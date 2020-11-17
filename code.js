@@ -14,21 +14,21 @@ $(document).ready(
             var finalBmi = (weight/(height*height)) * 703;
 
             if(finalBmi < 18.5){
-                document.bmiForm.meaning.value = "That you are too thin.";
+                var desc = "thin.";
             }
             else if(finalBmi > 18.5 && finalBmi < 25){
-                document.bmiForm.meaning.value = "That you are healthy.";
+                var desc = "healthy.";
             }
             else if(finalBmi > 25){
-                document.bmiForm.meaning.value = "That you are overweight.";
+                var desc = "overweight.";
             }
-            else{
-            alert("Please fill in boxes correctly");
+            else {
+                alert("Please fill in boxes correctly");
+            }
 
             $("#BMINumber").text(finalBmi.toFixed(1));
-            $("#BMIText").text("");
+            $("#BMIText").text(desc);
             $(".output").show();
         }
-    }
 }
 );
